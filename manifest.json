@@ -1,0 +1,65 @@
+{
+  "id": "navidrome-sync",
+  "name": "Navidrome Sync",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Keeps Aurral playlists and flows in sync with Navidrome. Creates, updates and removes the matching Navidrome playlist.",
+  "repository": "https://github.com/wkulhanek/aurral-navidrome-sync",
+  "uses": [
+    "Your Navidrome server",
+    "Aurral playlists"
+  ],
+  "settings": [
+    {
+      "key": "url",
+      "label": "Navidrome URL",
+      "type": "text",
+      "required": true,
+      "help": "For example http://navidrome:4533"
+    },
+    {
+      "key": "username",
+      "label": "Username",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "password",
+      "label": "Password",
+      "type": "password",
+      "required": true
+    },
+    {
+      "key": "prefix",
+      "label": "Playlist name prefix",
+      "type": "text",
+      "help": "Optional text put before each playlist name in Navidrome."
+    },
+    {
+      "key": "removeOnDelete",
+      "label": "Delete in Navidrome when removed in Aurral",
+      "type": "boolean"
+    },
+    {
+      "key": "public",
+      "label": "Make playlists public",
+      "type": "boolean"
+    }
+  ],
+  "test": true,
+  "actions": [
+    {
+      "id": "sync",
+      "label": "Sync to Navidrome",
+      "target": "playlist"
+    }
+  ],
+  "events": [
+    "playlist.changed",
+    "playlist.removed"
+  ],
+  "downloadSource": null,
+  "importList": null,
+  "schedule": null,
+  "apiAccess": false
+}
